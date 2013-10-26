@@ -1,0 +1,239 @@
+#container {
+	height: 800px;
+}
+
+html{
+	background: black;
+}
+header {
+	background-color: black;
+	height: 20%;
+	top:auto;
+}
+
+footer {
+	background-color: black;
+	height: 10%;
+	bottom: fixed;
+}
+
+#content {
+	width: 100%;
+	height: 70%;
+}
+
+#featured {
+	width: 100%;
+	height: 20%;
+}
+
+#squares {
+	height: 80%;
+	width: 100%;
+}
+
+.square{
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+.scrollable {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+div#logo{
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+
+#img_logo{
+	margin-left: 2%;
+	margin-top: 5%;
+	width:70%;
+	height:75%;
+}
+
+div#song_data{
+	background: -webkit-linear-gradient(black, grey);
+  	background: -moz-linear-gradient(black, grey);
+  	background: -ms-linear-gradient(black, grey);
+  	background: linear-gradient(black, grey);
+
+	margin-top: 0%;
+	margin-left: 5%;
+	width: 40%;
+	height: 90%;
+	float: left;
+
+	border: outset white 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 50px;
+}
+
+#song_status{
+	margin-top: 2%;
+	margin-bottom: 5%;
+	color:white;
+
+	font-size: large;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+
+	text-align: center;
+	text-decoration: underline;
+}
+
+#song_title{
+	color:white;
+
+	margin-top: 2%;
+	margin-bottom: 5%;
+
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	font-size: xx-large;
+	text-align: center;
+}
+
+#song_title:hover{
+	font-size:xx-large;
+}
+
+#song_details{
+	color:white;
+
+	width:100%;
+
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	font-size:small;
+
+	text-align: center;
+}
+
+#song_artist{
+	width: 50%;
+	float:left;
+}
+
+#song_album{
+	width:50%;
+	float:left;
+}
+
+div#account{	
+	width: 25%;
+	height: 75%;
+	float: left;
+
+	margin-top: 1%;
+	margin-left: 2%;
+
+	background: -webkit-linear-gradient(black, grey);
+  	background: -moz-linear-gradient(black, grey);
+  	background: -ms-linear-gradient(black, grey);
+  	background: linear-gradient(black, grey);
+
+	border: outset white 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 15px;
+
+	color:white;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	color: white;
+}
+
+h2 {
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: larger;
+	font-weight: bold;
+	text-decoration: underline;
+	color: white;
+}
+
+h3 {
+	text-align: center;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: small;
+	font-weight: lighter;
+	text-decoration: underline;
+	color: white;
+}
+
+p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	height: 100%;
+	padding: 35px;
+}
+
+tr {
+	height: 30%;
+}
+
+tr.genre{
+	height: 10%;
+	width:100%;
+}
+
+td {
+	height: 33%;
+	width: 33%;
+
+	background: -webkit-linear-gradient(grey, white);
+  	background: -moz-linear-gradient(grey, white);
+  	background: -ms-linear-gradient(grey, white);
+  	background: linear-gradient(grey, white);
+}
+
+td:hover{ 
+	background: -webkit-linear-gradient(grey, purple);
+  	background: -moz-linear-gradient(grey, purple);
+  	background: -ms-linear-gradient(grey, purple);
+  	background: linear-gradient(grey, purple);
+}
+
+td:active {
+    width: 70px;
+    height: 74px;
+}
+
+#footer{
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: smaller;
+	font-weight:lighter;
+	text-align: center;
+	color: white;
+}
+
+.f_item {
+	display: inline-block;
+	margin-left: 0px;
+	height: 25px;
+	border-radius: 50%;
+	width: 25px;
+	border: solid white 2px;
+  }
+
+ audio{
+ 	margin-top:1%;
+ 	margin-left:40%;
+ }

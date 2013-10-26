@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MajorScale Music</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="msm.js"> </script>
+  </head>
+
+  <body>
+    <script>
+      var date = new Date();
+      var day = date.getDay();
+      var week = document.getElementById("current_week");
+      //week.innerText = day;
+    </script>
+
+   <div id="fb-root"></div>
+   <script>
+  //   (function(d, s, id) {
+  //   var js, fjs = d.getElementsByTagName(s)[0];
+  //   if (d.getElementById(id)) return;
+  //   js = d.createElement(s); js.id = id;
+  //   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=223642521138154";
+  //   fjs.parentNode.insertBefore(js, fjs);
+  //   }(document, 'script', 'facebook-jssdk'));
+   </script>
+
+  <div id="container">
+    <header>
+      <div id="logo"> <img id="img_logo" src="logo.png" /> </div>
+      <div id="song_data" onclick="copyToClipboard()"> 
+          <div id="song_status"> Status </div>
+          <div id="song_info" onmouseover="" onmouseout=""> 
+              <div id="song_title"> Title </div> 
+              <div id="song_details">
+                <div id="song_artist"> Artist </div> 
+                <div id="song_album">  Album </div> 
+              </div> 
+              <div id="dialog-message" title="Download complete"></div>
+          </div>
+      </div>
+      <div id="account"> 
+     <div class="fb-login-button" data-width="200"></div>
+
+          <form action='login.php' method='post'>
+            USERNAME <input type='text' name='user'/> <br/><br/>
+            PASSWORD <input type='password' name='pw'/>
+            
+            <input type='submit' name='Login' value='Login' onClick=''/> 
+            <input type='submit' name='Register' value='Register' onClick=''/> 
+            <input type="hidden" name="ch" value="login">
+          </form>
+       
+      </div>
+    </header>
+
+    <hr>
+
+    <div id="content">
+      
+      <div id="featured" class="scrollable">
+        <h3> FEATURED SONGS </h3>
+        <div class="f_item"> </div>
+
+        <div class="scrollright" onClick="right()" style="float: right; cursor: pointer; margin-bottom: 5px; margin-right: 5px; color:purple;">RIGHT</div>
+<div class="scrollleft" style="float: right; cursor: pointer; margin-bottom: 5px; margin-right: 5px; color:purple;">LEFT</div>
+        <hr>
+        <div id="current_week"></div>
+      </div>
+      
+      <div id="squares">
+        
+        <div id="TL" class="square"> 
+          <table>
+            <tr class="genres"> <th></th> <th> A </th> <th></th> </tr>
+            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+         
+        </div>
+
+        <div id="TR" class="square"> 
+          <table>
+            <tr class="genres"> <th></th> <th> B </th> <th></th></tr>
+            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+        </div>
+
+        <div id="BL" class="square"> 
+          <table>
+            <tr class="genres"> <th></th> <th> C </th> <th></th></tr>
+            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+        </div>
+
+        <div id="BR" class="square"> 
+            <table>
+            <tr class="genres"> <th></th> <th> D </th> <th></th></tr>
+              <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+              <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+              <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+        </div>
+
+      </div> <!-- squares -->
+
+    </div> <!-- content -->
+
+     <hr>
+
+     <footer>
+      <audio id="current_song" controls onplay="go()" onpause="stop()" >
+        <source src="sunny.mp3" type="audio/mpeg" />
+        Your browser does not support this audio format.
+      </audio>
+      <p id="footer"> Designed by Nathaniel Blumer<br> </p>
+      <!-- <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div> -->
+      <div class="fb-like" data-href="msm.html" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial" data-colorscheme="light"></div>
+    </footer>
+
+    </div> <!-- container -->
+  </body>
+</html>
