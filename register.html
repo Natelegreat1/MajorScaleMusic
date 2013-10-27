@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MajorScale Music - Register</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="register.css" rel="stylesheet" />
+     <link href="datepicker/css/datepicker.css" rel="stylesheet" />
+ 
+    <script src="msm.js"> </script>
+
+	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  	<script>
+  			$(function() {
+    			$( "#datepicker" ).datepicker();
+ 			 });
+  		</script>
+  </head>
+
+  <body>
+
+  <div id="container">
+    <header>
+      <div id="logo"> <img id="img_logo" src="logo.png" /> </div>
+      <div id="song_data" onclick="copyToClipboard()"> 
+          <div id="song_status"> Status </div>
+          <div id="song_info" onmouseover="" onmouseout=""> 
+              <div id="song_title"> Title </div> 
+              <div id="song_details">
+                <div id="song_artist"> Artist </div> 
+                <div id="song_album">  Album </div> 
+              </div> 
+              <div id="dialog-message" title="Download complete"></div>
+          </div>
+      </div>
+      <div id="slogan"> 
+      	<p>Join MajorScale Music today <br/><br/><br/> <i>Get the most out of your music!</i></p>
+         
+      </div>
+    </header>
+
+    <hr>
+
+    <div id="content">
+     
+	    <form name='registration' action='' method='post'>
+	    <div id="registration">
+	    	<div id='data'>
+		    	<div id='required'>
+			    	Username* 	<br><input type="text" id="username" value='Natelegreat1'><br><br>
+			    	First name* <br><input type="text" id="first_name" value='Nate'><br>
+			    	Middle name <br><input type="text" id="middle_name" value='A'><br>
+					Last name* 	<br><input type="text" id="last_name" value='Blumer'> <br><br>
+			      	Email* 		<br><input type="email" id="email" value='N@a.b'><br>
+			      	Confirm Email* <br><input type="email" id="confirm_email" value="N@a.b"><br>
+			    </div>
+			    <div id='optional'>
+					<!-- Country <div id="countries"></div>
+					<script type="text/javascript" src="countries_dropdown.js"></script>
+					<script type="text/javascript"> countriesDropdown("countries"); </script> -->
+					Postal Code <br><input type="text" id="postal" size="6" maxlength="7" placeholder="A1A 1A1"><br><br>
+
+					Phone # 	<br><input type="tel" id="phone" size="15" maxlength="12" placeholder="123-456-7890" value='123-456-7890'> <br><br>
+					Date of Birth<br><input type="text" id="datepicker"><br><br>
+					Gender		<br><input type="radio" id='gender' name="sex" value="male" checked="checked">Male  
+									<input type="radio" id='gender' name="sex" value="female">Female
+					
+				</div>
+			</div>
+
+			<div id='promo'>
+				MUSIC
+				<div id="TL" class="square"> 
+		          <table>
+		            <tr class="genres"> <th></th> <th> Could you be next? </th> <th></th> </tr>
+		            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+		            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+		            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+		          </table>
+		         
+		        </div>
+			</div>
+
+			<div id='fine_print'>
+				<input type="checkbox" name="terms" id='terms' value="terms" checked>
+				I agree to the terms and conditions<br>
+				<input type="checkbox" name="news" id='news' value="news">
+				I would like to subscribe to the weekly newsletter <br><br>
+				<input type="submit" value="Register" onclick="register()">
+			</div>
+		
+		</div> <!-- registration -->
+		</form>
+    </div> <!-- content -->
+
+     <hr>
+
+     <footer>
+      <audio id="current_song" controls onplay="go()" onpause="stop()" >
+        <source src="sunny.mp3" type="audio/mpeg" />
+        Your browser does not support this audio format.
+      </audio>
+      <p id="footer"> Designed by Nathaniel Blumer<br> </p>
+    
+    </footer>
+
+    </div> <!-- container -->
+  </body>
+</html>

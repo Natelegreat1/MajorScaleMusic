@@ -140,9 +140,9 @@ div#account{
   	background: linear-gradient(black, grey);
 
 	border: outset white 5px;
-	-webkit-border-radius: 10px;
+	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 15px;
+	border-radius: 5px;
 
 	color:white;
 }
