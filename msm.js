@@ -18,7 +18,9 @@ function stop()
 	state.innerHTML="PAUSED";
 }
 
-
+function timeToRegister(){
+	window.location.href= 'register.html';
+}
 
 function copyToClipboard()
 {
