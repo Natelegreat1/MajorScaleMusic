@@ -5,13 +5,15 @@
     <title>MajorScale Music - Register</title>
     <link href="style.css" rel="stylesheet" />
     <link href="register.css" rel="stylesheet" />
-     <link href="datepicker/css/datepicker.css" rel="stylesheet" />
+    <link href="datepicker/css/datepicker.css" rel="stylesheet" />
  
     <script src="msm.js"> </script>
+    <script src="musicPlayer.js"></script>
+    <script src="registration.js"></script>
 
-	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	  	<script>
   			$(function() {
     			$( "#datepicker" ).datepicker();
@@ -20,6 +22,10 @@
   </head>
 
   <body>
+
+  	<script>
+      window.onload = buildForm;
+    </script>
 
   <div id="container">
     <header>
@@ -56,7 +62,7 @@
 			      	Email* 		<br><input type="email" id="email" value='N@a.b'><br>
 			      	Confirm Email* <br><input type="email" id="confirm_email" value="N@a.b"><br>
 			    </div>
-			    
+
 			    <div id='optional'>
 					<!-- Country <div id="countries"></div>
 					<script type="text/javascript" src="countries_dropdown.js"></script>
@@ -64,14 +70,19 @@
 					Postal Code <br><input type="text" id="postal" size="6" maxlength="7" placeholder="A1A 1A1"><br><br>
 
 					Phone # 	<br><input type="tel" id="phone" size="15" maxlength="12" placeholder="123-456-7890" value='123-456-7890'> <br><br>
-					Date of Birth<br><input type="text" id="datepicker"><br><br>
+					Date of Birth<br>
+					<select id="dob_day"></select>
+					<select id="dob_month"></select>
+					<select id="dob_year"></select>
+
+					<br><br>
 					Gender		<br><input type="radio" id='gender' name="sex" value="male" checked="checked">Male  
 									<input type="radio" id='gender' name="sex" value="female">Female
 				</div>
 			</div>
 
 			<div id='promo'>
-				MUSIC
+				
 				<div id="TL" class="square"> 
 		          <table>
 		            <tr class="genres"> <th></th> <th> Could you be next? </th> <th></th> </tr>
@@ -83,11 +94,11 @@
 			</div>
 
 			<div id='fine_print'>
-				<input type="checkbox" name="terms" id='terms' value="terms" checked>
-				I agree to the terms and conditions<br>
-				<input type="checkbox" name="news" id='news' value="news">
-				I would like to subscribe to the weekly newsletter <br><br>
-				<input type="submit" value="Register" onclick="register()">
+				<input type="checkbox" name="terms" id='terms' value="terms" checked/>
+				I agree to the terms and conditions<br/>
+				<input type="checkbox" name="news" id='news' value="news"/>
+				I would like to subscribe to the weekly newsletter <br/><br/>
+				<input type="submit" value="Register" onclick="register()"/>
 			</div>
 		
 		</div> <!-- registration -->

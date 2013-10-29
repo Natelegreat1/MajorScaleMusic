@@ -8,10 +8,15 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="msm.js"> </script>
+    <script src="musicPlayer.js"></script>
   </head>
 
   <body>
 
+    <script>
+      window.onload = pageLoaded;
+    </script>
+    
   <div id="container">
     <header>
       <div id="logo"> <img id="img_logo" src="logo.png" /> </div> 
@@ -21,52 +26,57 @@
             <marquee behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
             <div id="song_title"> Title </div> 
             </marquee>
+
               <div id="song_details">
                   <marquee behavior="scroll" scrollamount="2" width='40%' onmouseover="this.stop();" onmouseout="this.start();">
-                  <div id="song_artist"> Artist </div> 
+                    <div id="song_artist"> Artist </div> 
                   </marquee>
                   <marquee behavior="scroll" scrollamount="2" width='40%' onbounce='onstart()'onmouseover="this.stop();" onmouseout="this.start();">
-                  <div id="song_album"> Album </div>  
+                    <div id="song_album"> Album </div>  
                   </marquee>
               </div> 
               <div id="dialog-message" title="Download complete"></div>
           </div>
       </div>
-      <div id="account">             
-        <input type='submit' name='Login' value='Login' onClick='login()'/> 
-        <input type='submit' name='Register' value='Register' onClick='timeToRegister()'/> 
-        <div id='result'> hello</div>
-        
-        <script>
-          if(typeof(Storage)!=="undefined")
-          {
-            if (sessionStorage.login){
-              document.getElementById("result").innerHTML="Welcome back " + sessionStorage.login;
-            }else{
-              sessionStorage.login="Nathaniel Blumer";
-              document.getElementById("result").innerHTML="Welcome " + sessionStorage.login;
-            }
-          }else{
-            document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
-          }
-        </script>
 
-        <input type="hidden" name="ch" value="login">       
+      <div id="account">
+        <div id='newUserAccount' class='show'> 
+          <button type="button" id='loginStart' onclick="loginClick()">Login</button> 
+          <button type="button" id='register' onClick='registerClick()'>Register</button> 
+        </div>
+        <div id='loginAccount' class='hide'>
+              Username <input id='username_login' type='text' /> <br/>
+              Password <input id='password_login' type='password'/> <br/>
+
+              <button type='button' id='loginButton' onclick='login()'>Make some music!</button>
+              <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
+        </div>
+        <div id='account_message'></div>
+      </div>
+
+      <div id='searchSection'>
+        <form id="search" method="get" id="searchbox_018244718482588789495:p7exxt6ah5w" action="www.majorscalemusic.ca">
+          <input value="018244718482588789495:p7exxt6ah5w" name="cx" type="hidden"/> 
+          <input value="FORID:11" name="cof" type="hidden"/> 
+          <input id="q" name="q" type="text" placeholder="Search..." /> 
+        </form>
       </div>
     </header>
 
     <hr>
-
     <div id="content">
-      
+
       <div id="featured" class="scrollable">
         <table id='featured'>
-            <tr> <th></th> <th></th><th> FEATURED SONGS </th> <th></th><th></th> </tr>
+            <tr> <th></th> <th></th>
+                 <th> FEATURED SONGS        
+                      <div id="current_week"> week goes here</div>
+                  </th> 
+                  <th></th><th></th> </tr>
             <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> <td> 4 </td><td> 6 </td></tr>
-          </table>
+         </table>
 
         <hr>
-        <div id="current_week"></div>
       </div>
       
       <div id="squares">
