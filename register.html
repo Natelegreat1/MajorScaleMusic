@@ -5,32 +5,23 @@
     <title>MajorScale Music - Register</title>
     <link href="style.css" rel="stylesheet" />
     <link href="register.css" rel="stylesheet" />
-    <link href="datepicker/css/datepicker.css" rel="stylesheet" />
  
     <script src="msm.js"> </script>
     <script src="musicPlayer.js"></script>
     <script src="registration.js"></script>
 
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-	  	<script>
-  			$(function() {
-    			$( "#datepicker" ).datepicker();
- 			 });
-  		</script>
   </head>
 
   <body>
 
   	<script>
-      window.onload = buildForm;
+      window.onload = playPromo;
     </script>
 
   <div id="container">
     <header>
-      <div id="logo"> <img id="img_logo" src="logo.png" /> </div>
-      <div id="song_data" onclick="copyToClipboard()"> 
+      <div id="logo" onclick="location.href='index.html';"> <img id="img_logo" src="logo.png" /> </div>
+      <div id="song_data"> 
           <div id="song_status"> Status </div>
           <div id="song_info" onmouseover="" onmouseout=""> 
               <div id="song_title"> Title </div> 
@@ -50,24 +41,30 @@
     <hr>
 
     <div id="content">
-     
+    	<video id='promoVid' onended='buildForm();'></video>
+	    <div class="onoffswitch">
+		    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+		    <label class="onoffswitch-label" for="myonoffswitch">
+		        <div class="onoffswitch-inner"></div>
+		        <div class="onoffswitch-switch"></div>
+		    </label>
+		</div>
 	    <form name='registration' action='' method='post'>
 	    <div id="registration">
 	    	<div id='data'>
 		    	<div id='required'>
 			    	Username* 	<br><input type="text" id="username" value='Natelegreat1'><br><br>
 			    	First name* <br><input type="text" id="first_name" value='Nate'><br>
-			    	Middle name <br><input type="text" id="middle_name" value='A'><br>
 					Last name* 	<br><input type="text" id="last_name" value='Blumer'> <br><br>
 			      	Email* 		<br><input type="email" id="email" value='N@a.b'><br>
 			      	Confirm Email* <br><input type="email" id="confirm_email" value="N@a.b"><br>
 			    </div>
 
 			    <div id='optional'>
-					<!-- Country <div id="countries"></div>
+					Country <div id="countries"></div>
 					<script type="text/javascript" src="countries_dropdown.js"></script>
-					<script type="text/javascript"> countriesDropdown("countries"); </script> -->
-					Postal Code <br><input type="text" id="postal" size="6" maxlength="7" placeholder="A1A 1A1"><br><br>
+					<script type="text/javascript"> countriesDropdown("countries"); </script> 					
+					 Postal Code <br><input type="text" id="postal" size="6" maxlength="7" placeholder="A1A 1A1"><br><br>
 
 					Phone # 	<br><input type="tel" id="phone" size="15" maxlength="12" placeholder="123-456-7890" value='123-456-7890'> <br><br>
 					Date of Birth<br>
@@ -111,9 +108,7 @@
       <audio id="current_song" controls onplay="go()" onpause="stop()" >
         <source src="sunny.mp3" type="audio/mpeg" />
         Your browser does not support this audio format.
-      </audio>
-      <p id="footer"> Designed by Nathaniel Blumer<br> </p>
-    
+      </audio>    
     </footer>
 
     </div> <!-- container -->

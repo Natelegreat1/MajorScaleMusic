@@ -1,0 +1,26 @@
+#now_playing{
+	width:50%;
+	float:left;
+	margin-left: 5%;
+}
+
+#lyrics{
+	overflow: auto;
+	width:40%;
+	height: 90%;
+	color:white;
+
+	margin-top: 2%;	
+	
+	border: inset #9EFD38 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	float:left;
+
+	background: -webkit-linear-gradient(black, grey);
+  	background: -moz-linear-gradient(black, grey);
+  	background: -ms-linear-gradient(black, grey);
+  	background: linear-gradient(black, grey);
+}

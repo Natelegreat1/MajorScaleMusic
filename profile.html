@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MajorScale Music - Profile</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="register.css" rel="stylesheet" />
+    <link href="profile.css" rel="stylesheet" />
+
+    <script src="msm.js"> </script>
+    <script src="musicPlayer.js"></script>
+    <script src="registration.js"></script>
+    <script src='accountManagement.js'></script>
+  </head>
+
+  <body>
+
+  	<script>
+      window.onload = displayAccount;
+    </script>
+
+  <div id="container">
+    <header>
+      <div id="logo" onclick="location.href='index.html';"> <img id="img_logo" src="logo.png" /> </div>
+      <div id="song_data" onclick="copyToClipboard()"> 
+          <div id="song_status"> Status </div>
+          <div id="song_info" onmouseover="" onmouseout=""> 
+              <div id="song_title"> Title </div> 
+              <div id="song_details">
+                <div id="song_artist"> Artist </div> 
+                <div id="song_album">  Album </div> 
+              </div> 
+              <div id="dialog-message" title="Download complete"></div>
+          </div>
+      </div>
+      <div id="slogan"> 
+      	<a href='index.html'>Back to homepage</a>
+      </div>
+    </header>
+
+    <hr>
+
+    <div id="content">     
+	    <div id="account_info_crucial">
+	    	<span id='display_username' class='profile_info'> </span><br/>
+    	Name <span id='display_firstname' class='profile_info' contenteditable="true" ></span>
+   			<span id='display_lastname' class='profile_info' contenteditable="true"></span><br/>
+   		Email <span id='display_email' class='profile_info' contenteditable="true"></span><br/>
+    	Country <span id='display_country' class='profile_info' onclick='editInfo(this)'></span><br/>
+    	Postal Code <span id='display_postalcode' class='profile_info' contenteditable="true"></span><br/>
+    	Phone # <span id='display_phone' class='profile_info' contenteditable="true"></span><br/>
+    	Gender 	<span id='display_gender' class='profile_info' contenteditable="true"></span><br/>
+    	Birthday <span id='display_dob' class='profile_info' contenteditable="true"></span><br/>	
+    	<br/><br/><br/>
+				<input type="checkbox" name="news" id='news' value="news"/>
+				Subscribe to the weekly newsletter <br/><br/>
+		</div> <!-- account info crucial -->
+
+	    <div id="account_info_preferences">
+	   		<h1> Musical taste </h1>
+		    <div id='display_genres'></div>
+		</div> <!-- account preferences -->
+
+	    <div id="account_info_media">
+	    	<span id='twitter'> TWITTER 
+	    		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</span><br/><br/>
+
+	    	<span id='facebook'> FACEBOOK </span><br/><br/>
+	    	<span id='google'> GOOGLE +</span>
+		</div> <!-- account media preferences -->
+    	
+    </div> <!-- content -->
+
+     <hr>
+
+     <footer>
+      <audio id="current_song" controls onplay="go()" onpause="stop()" >
+        <source src="sunny.mp3" type="audio/mpeg" />
+        Your browser does not support this audio format.
+      </audio>    
+    </footer>
+
+    </div> <!-- container -->
+  </body>
+</html>

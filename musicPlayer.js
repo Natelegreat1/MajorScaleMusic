@@ -18,6 +18,16 @@ function stop()
 	state.innerHTML="PAUSED";
 }
 
+function playSong(song){
+	console.log(song.innerText);
+
+	window.location.href= 'song.html';
+
+	var state=document.getElementById("song_title");
+	state.innerHTML= song.innerText;
+
+}
+
 function copyToClipboard()
 {
 	var name = document.getElementById("song_title").textContent || document.getElementById("song_title").innerText;

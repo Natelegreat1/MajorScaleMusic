@@ -1,8 +1,14 @@
+function playPromo(){
+	var promo = document.getElementById('promoVid');
+		promo.src = 'MSM.MOV';
+		promo.controls=true;
+		promo.autoplay=true;
+}
+
 function buildForm(){
-	var day = document.getElementById("dob_day");
-	var month = document.getElementById("dob_month");
-	var year = document.getElementById("dob_year");
-	
+	var promo = document.getElementById('promoVid');
+	promo.parentNode.removeChild(promo);
+
 	var months = new Array(12);
 	months[0]="January";
 	months[1]="February";
@@ -16,6 +22,10 @@ function buildForm(){
 	months[9]="October";
 	months[10]="November";
 	months[11]="December";
+
+	var day = document.getElementById("dob_day");
+	var month = document.getElementById("dob_month");
+	var year = document.getElementById("dob_year");
 
 	var i;
 	var date = new Date();
@@ -45,6 +55,7 @@ function buildForm(){
 		}
 		year.appendChild(opt);
 	}
+
 }
 
 function emptyCheck(username, first, last, email, email_conf, postal, terms, dob)

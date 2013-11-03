@@ -4,21 +4,20 @@
 
 html{
 	background: black;
+	overflow: hidden;
 }
+
 header {
-	background-color: black;
 	height: 20%;
 	top:auto;
 }
 
 footer {
-	background-color: black;
 	height: 10%;
 	bottom: fixed;
 }
 
 #content {
-	width: 100%;
 	height: 70%;
 }
 
@@ -43,16 +42,15 @@ footer {
 
 div#logo{
 	width: 25%;
-	height: 100%;
 	float: left;
-	
-
 }
+
 #logo:hover{
 	transition:width 2s, height 2s, transform 4s;
 	-webkit-transition:width 2s, height 2s, -webkit-transform 4s;
-	transform:rotate(360deg);
-	-webkit-transform:rotate(360deg);
+	
+	transform:scale(1.5,1.5);
+	-webkit-transform:scale(1.5,1.5);
 }
 
 #img_logo{
@@ -103,8 +101,6 @@ div#song_data{
 	font-weight:lighter;
 	font-size: 300%;
 	text-align: center;
-
-
 }
 
 #song_title:hover{
@@ -113,8 +109,6 @@ div#song_data{
 
 #song_details{
 	color:white;
-
-	width:100%;
 
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 	font-weight:lighter;
@@ -271,12 +265,9 @@ td:active {
 	color: white;
 }
 
-.f_item {
-	display: inline-block;
-	height: 25px;
-	border: solid white 2px;
-	border-radius: 50%;
-	width: 25px;
+
+a {
+	color:white;
 }
 
 audio{

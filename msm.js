@@ -16,10 +16,8 @@ function pageLoaded()
 
 	      	accountMessage.innerHTML="Welcome back, " + sessionStorage.login + "<br/";
 	      	document.getElementById("account").appendChild(logoutButton);
-
 	    }
-	}else
-	{
+	}else{
 		accountMessage.innerHTML="Sorry, your browser does not support web storage...";
 	}
 

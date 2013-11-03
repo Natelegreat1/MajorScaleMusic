@@ -5,7 +5,6 @@
 
 	margin-top: 2%;
 	margin-left: 2%;
-
 	
 	color:white;
 }
@@ -35,14 +34,12 @@ form{
 	width:50%;
 	float: left;
 	position:relative;
-
 }
 
 #optional{
 	width:50%;
 	float: left;
 	position:relative;
-
 }
 
 #promo{
@@ -67,4 +64,66 @@ form{
 
 select{
 	size:10;
+}
+
+#myonoffswitch{
+	float: left;
+	margin-left: 40%;
+}
+
+.onoffswitch {
+    position: relative; width: 174px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFFFFF; border-radius: 50px;
+}
+
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 41px; padding: 0; line-height: 41px;
+    font-size: 24px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "USER";
+    padding-left: 14px;
+    background-color: #575757; color: #48A5C4;
+}
+
+.onoffswitch-inner:after {
+    content: "ARTIST";
+    padding-right: 14px;
+    background-color: #575757; color: #D6AA1A;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    width: 27px; margin: 7px;
+    background: #D6AA1A;
+    border: 2px solid #FFFFFF; border-radius: 50px;
+    position: absolute; top: 0; bottom: 0; right: 129px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+    background-color: #48A5C4; 
 }
