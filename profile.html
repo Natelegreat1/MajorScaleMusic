@@ -10,28 +10,27 @@
     <script src="js/msm.js"> </script>
     <script src="js/musicPlayer.js"></script>
     <script src='js/accountManagement.js'></script>
+    <script src="js/testing.js"></script>
+
   </head>
 
-  <body onload="displayAccount();">
+  <body onload="addMedia(); displayAccount();">
 
     <header>
-       <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
-
+      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
+     
       <div id="song_status"> STATUS </div>
-
-      <div id="song_data" > <!-- onclick="copyToClipboard()" -->
-            
+     
+      <div id="song_data" > <!-- onclick="copyToClipboard()" -->     
             <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
         <div id="song_title"> Title </div> 
             </marquee>
        
-        <div id="song_artist"> Artist </div> 
-           
-        
+        <div id="song_artist"> Artist </div>
         <div id="song_album"> Album (Year) </div>  
-
         <div id="dialog-message" title="Download complete"></div>
       </div>
+     
       <div id="slogan"> 
         <a href='index.html'>Back to homepage</a>
       </div>
@@ -61,13 +60,13 @@
 		</div> <!-- account preferences -->
 
 	    <div id="account_info_media">
-	    	<span id='twitter'> TWITTER 
+	    	<span id='twitter'> TWITTER <input type='text' value='NateLeGreat1'/>
 	    		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</span><br/><br/>
 
-	    	<span id='facebook'> FACEBOOK </span><br/><br/>
-	    	<span id='google'> GOOGLE +</span>
+	    	<span id='facebook'> FACEBOOK <input type='text' value='facebook.com/Nathaniel.blumer'/></span><br/><br/>
+	    	<span id='google'> GOOGLE + <input type='text' value='plus.google.com/+NathanielBlumer/'/></span>
 		</div> <!-- account media preferences -->
     	
     </div> <!-- content -->

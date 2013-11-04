@@ -14,7 +14,13 @@ function pageLoaded()
 
 			toggleVisibility(la);
 
-	      	accountMessage.innerHTML="Welcome back, " + sessionStorage.login + "<br/";
+			console.log(sessionStorage.login);
+			var profileLink = document.createElement("a");
+			profileLink.href = 'profile.html';
+			profileLink.appendChild(document.createTextNode(sessionStorage.login));
+	   	 	accountMessage.appendChild(document.createTextNode("Welcome back, "));
+	    	accountMessage.appendChild(profileLink);
+
 	      	document.getElementById("account").appendChild(logoutButton);
 	    }
 	}else{
@@ -92,8 +98,13 @@ function login()
 	var message = document.getElementById("account_message");
 	
 	if (username == u && password == p){
-		console.log("login info match!")
-	    message.innerHTML= "Welcome " + username;
+		console.log("login info match!");
+
+		var profileLink = document.createElement("a");
+		profileLink.href = 'profile.html';
+		profileLink.appendChild(document.createTextNode(username));
+	    message.appendChild(document.createTextNode("Welcome "));
+	    message.appendChild(profileLink);
 
 		var a = document.getElementById("loginAccount");
 		var nua = document.getElementById("newUserAccount");
@@ -116,6 +127,8 @@ function login()
 		}  
 	}else{
 		message.innerHTML = "Invalid. Try again";
+		u.value = "";
+		p.value = "";
 	}   
 }
 
