@@ -1,0 +1,92 @@
+span{
+	color: white;
+}
+
+#slogan{
+	width: 20%;
+	float: left;
+
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+#account_info_crucial{
+	margin-top: 2%;
+	margin-left: 2%;
+	width: 40%;
+	float:left;
+	color: white;
+}
+
+#account_info_preferences{
+	width: 35%;
+	height: 100%;
+	float:left;
+	color: white;
+
+	overflow: auto;
+}
+
+#display_genres{
+	height: 75%;
+	width: 55%;
+	color: #6A287E;
+}
+
+#account_info_media{
+	margin-top: 5%;
+	width: 10%;
+	float:left;
+	color: white;
+}
+
+#display_username{
+	height: 20%;
+	font-size: 350%;
+	padding: 1%;
+}
+
+#display_firstname{
+	height:10%;
+	width:50%;
+	font-size: xx-large;
+}
+
+#display_lastname{
+	height:10%;
+	width: 50%;
+	font-size: xx-large;
+}
+
+#display_email{
+	height: 10%;
+}
+
+#display_country{
+	height: 5%;
+}
+
+#display_postalcode{
+	height: 5%;
+}
+
+#display_phone{
+	height: 10%;
+}
+
+#display_gender{
+	height: 10%;
+}
+
+#display_dob{
+	height: 10%;
+}
+
+#display_news{
+	height: 10%;
+}
+
+.profile_info{
+	font-size: x-large;
+	color: #6A287E;
+}

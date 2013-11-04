@@ -3,40 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <title>MajorScale Music</title>
-    <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/homepage.css" rel="stylesheet" />
+    <link href="css/search.css" rel="stylesheet" />
+    <link href="css/testing.css" rel="stylesheet" />
+    <link  href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="msm.js"> </script>
-    <script src="musicPlayer.js"></script>
+    <script src="js/msm.js"> </script>
+    <script src="js/musicPlayer.js"></script>
+    <script src="js/testing.js"></script>
+
   </head>
 
-  <body>
+  <body onload="pageLoaded(); addMedia();">
 
-    <script>
-      window.onload = pageLoaded;
-    </script>
-
-  <div id="container">
     <header>
-      <div id="logo" onclick="location.href='index.html';"> <img id="img_logo" src="logo.png" /> </div> 
-      <div id="song_data" onclick="copyToClipboard()"> 
-          <div id="song_status"> STATUS </div>
-          <div id="song_info" onmouseover="" onmouseout=""> 
-            <marquee behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-            <div id="song_title"> Title </div> 
-            </marquee>
+      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
 
-              <div id="song_details">
-                  <marquee behavior="scroll" scrollamount="2" width='40%' onmouseover="this.stop();" onmouseout="this.start();">
-                    <div id="song_artist"> Artist </div> 
-                  </marquee>
-                  <marquee behavior="scroll" scrollamount="2" width='40%' onbounce='onstart()'onmouseover="this.stop();" onmouseout="this.start();">
-                    <div id="song_album"> Album </div>  
-                  </marquee>
-              </div> 
-              <div id="dialog-message" title="Download complete"></div>
-          </div>
+      <div id="song_status"> STATUS </div>
+      <div id="song_data" > <!-- onclick="copyToClipboard()" --> 
+            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+        <div id="song_title"> Title </div> 
+            </marquee>
+        <div id="song_artist"> Artist </div> 
+        <div id="song_album"> Album (Year) </div>  
+        <div id="dialog-message" title="Download complete"></div>
       </div>
 
       <div id="account">
@@ -65,6 +59,7 @@
 
     <hr>
     <div id="content">
+
       <div id="featured" class="scrollable">
         <table id='featured'>
             <tr> <th></th> <th></th>
@@ -123,9 +118,10 @@
      <hr>
 
     <footer>
-     <audio src="sunny.mp3" onplay="go()" onpause="stop()" controls> Your browser does not support this audio format. </audio>
+      <audio onplay="go()" onpause="stop()" controls> 
+        <source id='test_audio'> Your browser does not support this audio format. </source>
+      </audio>
     </footer>
 
-    </div> <!-- container -->
   </body>
 </html>

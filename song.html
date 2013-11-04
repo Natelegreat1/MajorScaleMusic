@@ -3,34 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>MajorScale Music - Song</title>
-    <link href="style.css" rel="stylesheet" />
-    <link href="song.css" rel="stylesheet" />
-    <link href="register.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/song.css" rel="stylesheet" />
+    <link href="css/register.css" rel="stylesheet" />
 
-    <script src="msm.js"> </script>
-    <script src="musicPlayer.js"></script>
+    <script src="js/msm.js"> </script>
+    <script src="js/musicPlayer.js"></script>
+    <script src="js/testing.js"></script>
+
   </head>
 
-  <body>
+  <body onload='addMedia();'>
 
-  	<script>
-      //window.onload = buildForm;
-    </script>
-
-  <div id="container">
     <header>
-      <div id="logo" onclick="location.href='index.html';"> <img id="img_logo" src="logo.png" /> </div>
-      <div id="song_data" onclick="copyToClipboard()"> 
-          <div id="song_status"> Status </div>
-          <div id="song_info"> 
-              <div id="song_title"> Title </div> 
-              <div id="song_details">
-                <div id="song_artist"> Artist </div> 
-                <div id="song_album">  Album </div> 
-              </div> 
-              <div id="dialog-message" title="Download complete"></div>
-          </div>
-           
+      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
+      <div id="song_status"> STATUS </div>
+      <div id="song_data" > <!-- onclick="copyToClipboard()" -->
+            
+            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+        <div id="song_title"> Title </div> 
+            </marquee>
+       
+        <div id="song_artist"> Artist </div>     
+        <div id="song_album"> Album (Year) </div>  
+        <div id="dialog-message" title="Download complete"></div>
       </div>
 
       <div id="account">
@@ -46,86 +42,86 @@
               <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
         </div>
         <div id='account_message'>  
-          Join MajorScale Music today <br/><br/><br/> <i>Get the most out of your music!</i>
+          Join MajorScale Music today <br/><br/> <i>Get the most out of your music!</i>
         </div>
       </div>
     </header>
 
     <hr>
 
-    <div id="content">
+  <div id="content">
      
-     <div id="now_playing">
-			    	<video src="Lazy Sunday.mp4" controls>Your browser does not support this video format. </video>
-           
-     </div> <!-- video/audio -->
+    <div id="now_playing">
+    	<video controls>
+        <source id='test_video'> Your browser does not support this audio format. </source>
+      </video>
+    </div> <!-- video/audio -->
 
-			<div id='lyrics'>
-        LYRICS
-        <blockquote><pre>
-        Lazy Sunday, wake up in the late afternoon
-        Call Parnell just to see how he's doin'
-        Hello? What up, Parns?
-        Yo, Samberg, what's crackin'?
-        You thinkin' what I'm thinkin'? Narnia
+		<div id='lyrics'>
+      <blockquote><pre>
+      Lazy Sunday, wake up in the late afternoon
+      Call Parnell just to see how he's doin'
+      Hello? What up, Parns?
+      Yo, Samberg, what's crackin'?
+      You thinkin' what I'm thinkin'? Narnia
 
-        Man, it's happenin'
-        But first my hunger pangs are stickin' like duct tape
-        Let's hit up Magnolia and mack on some cupcakes
-        No doubt, that bakery's got all the bomb frostings
-        I love those cupcakes like McAdams loves Gosling
+      Man, it's happenin'
+      But first my hunger pangs are stickin' like duct tape
+      Let's hit up Magnolia and mack on some cupcakes
+      No doubt, that bakery's got all the bomb frostings
+      I love those cupcakes like McAdams loves Gosling
 
-        Two, no, six, no, twelve, bakers' dozen
-        I told you that I'm crazy for these cupcakes, cousin
-        Yo, where's the movie playin'? Up on west side, dude
-        Well, let's hit up Yahoo Maps to find the dopest route
+      Two, no, six, no, twelve, bakers' dozen
+      I told you that I'm crazy for these cupcakes, cousin
+      Yo, where's the movie playin'? Up on west side, dude
+      Well, let's hit up Yahoo Maps to find the dopest route
 
-        I prefer MapQuest, that's a good one too
-        Google maps is the best, true that, double true
-        Yo, sixty eight to Broadway, step on it, sucka
-        Whatcha wanna do Chris? Snack attack, muthafucka
+      I prefer MapQuest, that's a good one too
+      Google maps is the best, true that, double true
+      Yo, sixty eight to Broadway, step on it, sucka
+      Whatcha wanna do Chris? Snack attack, muthafucka
 
-        The Chronicwhatcles of Narnia
-        Yes, the Chronicwhatcles of Narnia
-        We love the Chronicwhatcles of Narnia
-        Pass the Chronicwhatcles of Narnia
+      The Chronicwhatcles of Narnia
+      Yes, the Chronicwhatcles of Narnia
+      We love the Chronicwhatcles of Narnia
+      Pass the Chronicwhatcles of Narnia
 
-        Yo, stop at the deli, the theater's overpriced
-        You got the back pack? Gonna pack it up nice
-        Don't want security to get suspicious
-        MrPibb and Red Vines equals crazy delicious
+      Yo, stop at the deli, the theater's overpriced
+      You got the back pack? Gonna pack it up nice
+      Don't want security to get suspicious
+      MrPibb and Red Vines equals crazy delicious
 
-        Yo, reach in my pocket, pull out some dough
-        Girl acted like she'd never seen a ten befo'
-        It's all about the Hamilton's, baby
-        Throw the snacks in the bag
-        And I'm a ghost like Swayze
+      Yo, reach in my pocket, pull out some dough
+      Girl acted like she'd never seen a ten befo'
+      It's all about the Hamilton's, baby
+      Throw the snacks in the bag
+      And I'm a ghost like Swayze
 
-        Roll up to the theater, ticket buyin'
-        What we're handlin', you can call us Aaron Burr
-        From the way we're droppin' Hamilton's
-        Now parked in our seats, movie trivia's da illest
-        Whose "Friends" alum starred in films with Bruce Willis?
+      Roll up to the theater, ticket buyin'
+      What we're handlin', you can call us Aaron Burr
+      From the way we're droppin' Hamilton's
+      Now parked in our seats, movie trivia's da illest
+      Whose "Friends" alum starred in films with Bruce Willis?
 
-        We answered so fast, it was scary
-        Everyone stared in awe when we screamed, Matthew Perry
-        Now quiet in the theater or it's gonna get tragic
-        We're about to get taken to a dream world of magic
+      We answered so fast, it was scary
+      Everyone stared in awe when we screamed, Matthew Perry
+      Now quiet in the theater or it's gonna get tragic
+      We're about to get taken to a dream world of magic
 
-        The Chronicwhatcles of Narnia
-        Yes, the Chronicwhatcles of Narnia
-        We love the Chronicwhatcles of Narnia
-        Pass the Chronicwhatcles of Narnia </pre></blockquote>
-			</div>
+      The Chronicwhatcles of Narnia
+      Yes, the Chronicwhatcles of Narnia
+      We love the Chronicwhatcles of Narnia
+      Pass the Chronicwhatcles of Narnia </pre></blockquote>
+		</div>
 		
-    </div> <!-- content -->
+  </div> <!-- content -->
 
-     <hr>
+    <hr>
 
     <footer>
-      <audio src="sunny.mp3" onplay="go()" onpause="stop()" controls> Your browser does not support this audio format. </audio>
+      <audio onplay="go()" onpause="stop()" controls>
+        <source id='test_audio'> Your browser does not support this audio format. </source>
+      </audio> 
     </footer>
-
-    </div> <!-- container -->
   </body>
 </html>

@@ -1,0 +1,179 @@
+html{
+	background: black;
+	overflow: hidden;
+}
+
+body{
+	margin: 0;
+    padding: 0;
+    height: 800px;
+    width: 100%;
+}
+
+header {
+	height: 20%;
+	top:auto;
+}
+
+footer {
+	height: 5%;
+	bottom: fixed;
+
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: smaller;
+	font-weight:lighter;
+	text-align: center;
+	color: white;
+}
+
+#content {
+	height: 75%;
+}
+
+
+#logo{
+	width:25%;
+}
+
+#logo:hover{
+	transition:width 2s, height 2s, transform 4s;
+	-webkit-transition:width 2s, height 2s, -webkit-transform 4s;
+	
+	transform:scale(1.5,1.5);
+	-webkit-transform:scale(1.5,1.5);
+}
+
+#img_logo{
+	content:url("../media/logo.png");
+
+	margin-left: 2%;
+	margin-top: 2%;
+	width: 16%;
+ 	float: left;
+}
+
+#song_status{
+	width: 50%;
+	height: 10%;
+	margin-left: 5%;
+
+	float: left;
+	text-align: center;
+	font-size: large;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	color:white;
+}
+
+div#song_data{
+	width: 50%;
+	height: 60%;
+	background: -webkit-linear-gradient(black, grey);
+  	background: -moz-linear-gradient(black, grey);
+  	background: -ms-linear-gradient(black, grey);
+  	background: linear-gradient(black, grey);
+
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+
+	margin-top: 1%;
+	margin-left: 5%;
+	float: left;
+
+	border: outset white 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 50px;
+
+	color: white;
+}
+
+
+#song_title{
+	margin-top: 2.5%;
+
+	font-weight:lighter;
+	font-size: 300%;
+}
+
+#song_artist{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+#song_album{
+	width:50%;
+	float: left;
+	text-align: center;
+
+}
+
+audio{
+ 	width: 100%;
+ 	margin: 0 auto;
+}
+
+div#account{	
+	width: 20%;
+	height: 50%;
+	float: left;
+
+	margin-top: 1%;
+	margin-left: 2%;
+
+	background: -webkit-linear-gradient(black, grey);
+  	background: -moz-linear-gradient(black, grey);
+  	background: -ms-linear-gradient(black, grey);
+  	background: linear-gradient(black, grey);
+
+	border: outset white 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	color:white;
+}
+
+.hide{
+	display:none;
+}
+
+.show{
+	display:inline;
+}
+
+h1 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+
+h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: larger;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+	color: white;
+}
+
+h3 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: small;
+	font-weight: lighter;
+	text-decoration: underline;
+	text-align: center;
+	color: white;
+}
+
+p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	text-align: center;
+}
+
+a{
+	color: white;
+}

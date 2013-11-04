@@ -1,0 +1,15 @@
+#promo_logo{
+	content:url("../media/logo.png");
+	width: 25%;
+	float: left;
+}
+
+#promo_slogan{
+	width: 25%;
+	float: left;
+
+	margin-top: 2%;
+	margin-left: 2%;
+	
+	color:white;
+}
