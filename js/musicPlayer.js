@@ -15,7 +15,7 @@ function go()
 
 	title.innerHTML="It's Always Sunny (theme)";
 	artist.innerHTML="Heinz Kiessling";
-	album.innerHTML="Temptation Sensation (1969)";
+	album.innerHTML="Temptation Sensation [1969]";
 }
 
 function stop()
@@ -35,8 +35,9 @@ function playSong(song)
 	window.location.href= 'song.html';
 
 	var title=document.getElementById("song_title");
-	title.appendChild(document.createTextNode(song.innerText));
+	title.appendChild(document.createTextNode(song.id));
 }
+
 
 function copyToClipboard()
 {

@@ -1,4 +1,4 @@
-function pageLoaded()
+function homepageLoaded()
 {
 	var accountMessage = document.getElementById("account_message");
 	if (typeof(Storage)!=="undefined")
@@ -14,8 +14,9 @@ function pageLoaded()
 
 			toggleVisibility(la);
 
-			console.log(sessionStorage.login);
+			//console.log(sessionStorage.login);
 			var profileLink = document.createElement("a");
+			profileLink.id = 'userID';
 			profileLink.href = 'profile.html';
 			profileLink.appendChild(document.createTextNode(sessionStorage.login));
 	   	 	accountMessage.appendChild(document.createTextNode("Welcome back, "));
@@ -27,16 +28,84 @@ function pageLoaded()
 		accountMessage.innerHTML="Sorry, your browser does not support web storage...";
 	}
 
-	//resizeWindow();
+	//window.addEventListener('resize', resizeWindow, false);
 
 	insertDay(); //update the featured songs date to today
+	displayFeaturedSongs();
+	addGenres();
+	//startMarquee();
+}
+
+function displayFeaturedSongs(){
+
+	var vids = new Array();	
+	var v1 = document.getElementById('feat_video1');
+	var v2 = document.getElementById('feat_video2');
+	var v3 = document.getElementById('feat_video3');
+	var v4 = document.getElementById('feat_video4');
+	var v5 = document.getElementById('feat_video5');
+
+	vids.push(v1);
+	vids.push(v2);
+	vids.push(v3);
+	vids.push(v4);
+	vids.push(v5);
+
+	var sources = new Array();
+	var sr1 = document.createElement('source');
+	var sr2 = document.createElement('source');
+	var sr3 = document.createElement('source');
+	var sr4 = document.createElement('source');
+	var sr5 = document.createElement('source');
+
+	sources.push(sr1);
+	sources.push(sr2);
+	sources.push(sr3);
+	sources.push(sr4);
+	sources.push(sr5);
+
+	var i;
+	for(i=0; i< vids.length; i++){
+		var v = vids[i];
+		var s = sources[i];
+		v.innerText = 'Your browser does not support this audio format.';
+		v.height = 150;
+		v.poster="media/abstract_triangles.jpg";
+		v.onclick = function() { 	playSong(this);		};
+
+		s.id = String(i);
+		s.src = 'media/Lazy Sunday.mp4';
+		s.type= "video/mp4";
+
+		v.appendChild(s);
+		s.parentNode.load();
+	}
 }
 
 function resizeWindow()
 {
-	var cont = document.getElementById('body');
-	cont.height = window.innerHeight +"px";
-	cont.width = window.innerWidth +"px";
+   var gameArea = document.getElementById('body');
+    var widthToHeight = 4 / 3;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
+    var newWidthToHeight = newWidth / newHeight;
+    
+    if (newWidthToHeight > widthToHeight) {
+        newWidth = newHeight * widthToHeight;
+        gameArea.style.height = newHeight + 'px';
+        gameArea.style.width = newWidth + 'px';
+    } else {
+        newHeight = newWidth / widthToHeight;
+        gameArea.style.width = newWidth + 'px';
+        gameArea.style.height = newHeight + 'px';
+    }
+    
+    gameArea.style.marginTop = (-newHeight / 2) + 'px';
+    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
+    
+    var gameCanvas = document.getElementById('body');
+    gameCanvas.width = newWidth;
+    gameCanvas.height = newHeight;
 }
 
 function logout()
@@ -167,6 +236,47 @@ function insertDay()
 	var month = month[date.getMonth()];
 
     var cur_week = document.getElementById("current_week");
-    cur_week.innerText = day + ", " + month + " " + date.getDate() + ", " + date.getFullYear();
+    cur_week.innerText =  "FEATURED SONGS : " + day + ", " + month + " " + date.getDate() + ", " + date.getFullYear();
     cur_week.style.fontStyle = 'italic';
+}
+
+function addGenres(){
+	var i;
+	var genres = new Array("Blues","Classic Rock","Country","Dance","Disco","Funk","Grunge",
+ "Hip-Hop","Jazz","Metal","New Age","Oldies","Other","Pop","R&B",
+ "Rap","Reggae","Rock","Techno","Industrial","Alternative","Ska",
+ "Death Metal","Soundtrack","Euro-Techno","Ambient",
+ "Trip-Hop","Vocal","Jazz+Funk","Fusion","Trance","Classical",
+ "Instrumental","Acid","House","Game","Sound Clip","Gospel",
+ "Noise","AlternRock","Bass","Soul","Punk","Space","Meditative",
+ "Instrumental Pop","Instrumental Rock","Ethnic","Gothic",
+ "Darkwave","Techno-Industrial","Electronic","Pop-Folk",
+ "Eurodance","Dream","Southern Rock","Comedy","Cult","Gangsta",
+ "Top 40","Christian Rap","Pop/Funk","Jungle","Native American",
+ "Cabaret","New Wave","Psychadelic","Rave","Showtunes","Trailer",
+ "Lo-Fi","Tribal","Acid Punk","Acid Jazz","Polka","Retro",
+ "Musical","Rock & Roll","Hard Rock","Folk","Folk-Rock",
+ "National Folk","Swing","Fast Fusion","Latin","Revival",
+ "Celtic","Bluegrass","Avantgarde","Gothic Rock","Progressive Rock",
+ "Psychedelic Rock","Symphonic Rock","Slow Rock","Big Band",
+ "Chorus","Easy Listening","Acoustic","Humour","Chanson",
+ "Opera","Chamber Music","Sonata","Symphony","Booty Bass","Primus", "Satire","Slow Jam","Club","Tango","Samba",
+ "Folklore","Ballad","Power Ballad","Rhythmic Soul","Freestyle",
+ "Duet","Punk Rock","Drum Solo","Acapella","Euro-House","Dance Hall");
+
+
+	var genreAreas = document.getElementsByClassName('genres');
+
+	for (i=0; i< genreAreas.length; i++){
+		genreAreas[i].appendChild(document.createTextNode(genres[i]));
+	}
+
+}
+
+function startExtras(){
+alert('called'); var m_title = document.getElementsByClassName('marq_title');
+	var m_extras = document.getElementsByClassName('marq_extras');
+
+	toggleVisibility(m_extras);
+	m_extras.start();
 }

@@ -1,102 +1,133 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>MajorScale Music - Register</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/register.css" rel="stylesheet" />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/register.css' rel='stylesheet' />
 
-    <script src="js/msm.js"> </script>
-    <script src="js/musicPlayer.js"></script>
-    <script src="js/registration.js"></script>
-    <script src="js/testing.js"></script>
+    <script src='js/msm.js'> </script>
+    <script src='js/musicPlayer.js'></script>
+    <script src='js/registration.js'></script>
+    <script src='js/testing.js'></script>
 
   </head>
 
-  <body onload='addMedia();'>
-
+  <body onload='addMedia(); buildForm();'>
     <header>
-      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
-      <div id="song_status"> STATUS </div>
-      <div id="song_data" > <!-- onclick="copyToClipboard()" -->
-            
-            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-        <div id="song_title"> Title </div> 
-            </marquee>
-       
-        <div id="song_artist"> Artist </div> 
-        <div id="song_album"> Album (Year) </div>  
-        <div id="dialog-message" title="Download complete"></div>
+      <div id='logo'>
+        <a href='index.html'> <img id='img_logo'> </img> </a> 
       </div>
 
-      <div id="slogan"> 
-      	Join MajorScale Music today <br/><br/><br/> <i>Get the most out of your music!</i>   
+      <div id='music_information'> 
+          <span id='song_status'> STATUS </span>
+
+          <div id='song_data'> <!-- onclick='copyToClipboard()' --> 
+            <marquee  behavior='scroll' scrollamount='2'> <!-- onmouseover='this.stop();' onmouseout='this.start();'  -->
+              <span id='song_title' onmouseover='showMoreInfo();' onmouseout='hideMoreInfo();'> Title </span> 
+            </marquee>
+            <span id='song_artist' class='hide'> Artist </span> 
+            <span id='song_album' class='hide'> Album (Year) </span>  
+          </div>
+
+          <div id='player'>
+            <audio class='now_playing' onplay='go()' onpause='stop()' controls> 
+              <source id='now_playing'> Your browser does not support this audio format. </source>
+            </audio>
+          </div>
+      </div>
+
+      <div id='account'>
+        <span id='newUserAccount' class='show'> 
+          <button type='button' id='loginStart' onclick='loginClick()'>Login </button> 
+          <button type='button' id='register' onClick='registerClick()'>Register </button> 
+        </span>
+        <span id='loginAccount' class='hide'>
+              Username <input id='username_login' type='text' /> <br/>
+              Password <input id='password_login' type='password'/> <br/>
+
+              <button type='button' id='loginButton' onclick='login()'>Make some music!</button>
+              <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
+        </span>
+        <span id='account_message'></span>
       </div>
     </header>
 
-    <hr>
 
-    <div id="content">
-      	<div class="onoffswitch">
-		    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-		    <label class="onoffswitch-label" for="myonoffswitch">
-		        <div class="onoffswitch-inner"></div>
-		        <div class="onoffswitch-switch"></div>
-		    </label>
-		</div>
-	    <form name='registration' action='' method='post'>
-	    <div id="registration">
-	    	<div id='data'>
-		    	<div id='required'>
-			    	Username* 	<br><input type="text" id="username" value='Natelegreat1'><br><br>
-			    	First name* <br><input type="text" id="first_name" value='Nate'><br>
-					Last name* 	<br><input type="text" id="last_name" value='Blumer'> <br><br>
-			      	Email* 		<br><input type="email" id="email" value='N@a.b'><br>
-			      	Confirm Email* <br><input type="email" id="confirm_email" value="N@a.b"><br>
-			    </div>
+    <div id='content'>
+      <div id='registration'>
 
-			    <div id='optional'>
-					Country <div id="countries"></div>
-					<script type="text/javascript" src="countries_dropdown.js"></script>
-					<script type="text/javascript"> countriesDropdown("countries"); </script> 					
-					 Postal Code <br><input type="text" id="postal" size="6" maxlength="7" placeholder="A1A 1A1"><br><br>
+        <div id='accountChoice' onclick='javascript:switchAccountChoice();'>
+            <div id='userChoice' class='selected'> USER</div>
+            <div id='artistChoice' class='unselected'> ARTIST</div>
+        </div>
 
-					Phone # 	<br><input type="tel" id="phone" size="15" maxlength="12" placeholder="123-456-7890" value='123-456-7890'> <br><br>
-					Date of Birth<br>
-					<select id="dob_day"></select>
-					<select id="dob_month"></select>
-					<select id="dob_year"></select>
+	      <div id='data'>
+          <hr/>
+          <br/>
+          <form>
+			    	 Username* 	   <br><input type='text' id='reg_username' value='Natelegreat1'><br><br>
+			       Password*     <br><input type='passord' id='reg_password' value=''><br>
+	           Confirm Password* <br><input type='password' id='reg_password_confirm' value=''><br><br>
 
-					<br><br>
-					Gender		<br><input type="radio" id='gender' name="sex" value="male" checked="checked">Male  
-									<input type="radio" id='gender' name="sex" value="female">Female
-				</div>
-			</div>
+            First name*    <br><input type='text' id='reg_first_name' value='Nate'>      <br>
+					  Last name* 	   <br><input type='text' id='reg_last_name' value='Blumer'>     <br><br>
+			      Email* 		     <br><input type='email' id='reg_email' value='N@a.b'>         <br>
+			      Confirm Email* <br><input type='email' id='reg_email_confirm' value='N@a.b'> <br><br>
 
-			<div id='promo'>
-				<video width='100%'>
-		       		<source id='promoVid' > Your browser does not support this audio format. </source>
-		      	</video>
-			</div>
+  					Country 
+            <div id='countries'></div>
+    				<script type='text/javascript' src='js/countries_dropdown.js'></script>
+    				<script type='text/javascript'> countriesDropdown('countries'); </script> 					
+  					Postal Code <br>
+            <input type='text' id='reg_postal' size='6' maxlength='7' placeholder='A1A 1A1'>
+            </br></br>
 
-			<div id='fine_print'>
-				<input type="checkbox" name="terms" id='terms' value="terms" checked/>
-				I agree to the terms and conditions<br/>
-				<input type="checkbox" name="news" id='news' value="news"/>
-				I would like to subscribe to the weekly newsletter <br/><br/>
-				<input type="submit" value="Register" onclick="register()"/>
-			</div>
-		
-		</div> <!-- registration -->
-		</form>
+            <div id='securityNumber' class='show'>
+  					  Phone # 	<br>
+              <input type='tel' id='reg_phone' size='15' maxlength='12' placeholder='123-456-7890' value='123-456-7890'>  </br> 
+              <a id='securitySwitch' href="javascript:mobileToQuestion();"> No mobile? </a>
+            </div>
+            <div id='securityQuestion' class='hide'>
+              Security Question   <br>
+               <select id='security_questions'></select> </br>
+               <input type='text' id='security_answer'/> </br>
+               <a id='securitySwitch' href="javascript:mobileToQuestion();"> Prefer mobile? </a>
+            </div>
+
+            <br><br>
+  					Date of Birth<br>
+    					<select id='dob_day'></select>
+    					<select id='dob_month'></select>
+    					<select id='dob_year'></select>
+
+  					<br><br>
+  					Gender   <br>
+                <input type='radio' id='reg_gender' name='sex' value='male' checked='checked'>Male  
+  							<input type='radio' id='reg_gender' name='sex' value='female'>Female
+
+            </br></br></br>
+            <input type='checkbox' name='terms' id='reg_terms' value='terms' />
+            I agree to the terms and conditions <br/><br/>
+            <div id='submit_button' class='button' onclick='javascript:register();'>Register</div>
+        </div>
+    
+      </div>
+
+      <div id='promo'>
+        <video class='now_playing' controls>
+          <source id='promoVidHD' > Your browser does not support this video format. </source>
+          <source id='promoVid' > Your browser does not support this video format. </source>
+        </video>
+      </div>
     </div> <!-- content -->
 
-     <hr>
+     <hr/>
 
      <footer>
-      <audio onplay="go()" onpause="stop()" controls>
-        <source id='test_audio'> Your browser does not support this audio format. </source>
-      </audio>  
+      About us </br>
+      Contact us</br>
+      MajorScale Music™ ©2013  
     </footer>
 
   </body>

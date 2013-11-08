@@ -1,5 +1,5 @@
 function addMedia(){
- 	var element = document.getElementById("test_audio");
+ 	var element = document.getElementById("now_playing");
 
  	if (element){
 		element.src = 'media/sunny.mp3';
@@ -18,6 +18,12 @@ function addMedia(){
  	 if (element){
 		element.src = 'media/MSM.MOV';
 		element.type="video/mov";
+		element.parentNode.load();
+	}
+	element = document.getElementById("promoVidHD");
+ 	 if (element){
+		element.src = 'media/msm.mp4';
+		element.type="video/mp4";
 		element.parentNode.load();
 	}
 }

@@ -1,40 +1,43 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>MajorScale Music - Register</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/preregister.css" rel="stylesheet" />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/preregister.css' rel='stylesheet' />
 
-    <script src="js/msm.js"> </script>
-    <script src="js/registration.js"></script>
-    <script src="js/testing.js"></script>
+    <script src='js/msm.js'> </script>
+    <script src='js/registration.js'></script>
+    <script src='js/testing.js'></script>
 
   </head>
 
   <body onload='addMedia(); playPromo();'>
 
     <header>
-      <div id="promo_logo"> <img id="img_logo"/> </div>
+      <div id='promo_logo'> <img id='img_logo'/> </div>
       
-      <div id="promo_slogan"> 
+      <div id='promo_slogan'> 
       	<p>Join MajorScale Music today <br/><br/><br/> <i>Get the most out of your music!</i></p>  
       </div>
     </header>
 
-    <hr>
+    <hr/>
 
-    <div id="content">
+    <div id='content'>
     	<video width='100%' onended='buildForm();'>
+        <source id='promoVidHD' > Your browser does not support this audio format. </source>
         <source id='promoVid' > Your browser does not support this audio format. </source>
       </video>
 
     </div> <!-- content -->
 
-     <hr>
+     <hr/>
 
     <footer>
-    	MajorScale Music™ ©2013
+      About us </br>
+      Contact us</br>
+      MajorScale Music™ ©2013
     </footer>
 
   </body>

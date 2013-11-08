@@ -10,21 +10,21 @@ function preregForm(){
 	promo.parentNode.removeChild(promo);
 }
 
-function buildForm(){
-
+function buildForm()
+{
 	var months = new Array(12);
-	months[0]="January";
-	months[1]="February";
-	months[2]="March";
-	months[3]="April";
-	months[4]="May";
-	months[5]="June";
-	months[6]="July";
-	months[7]="August";
-	months[8]="September";
-	months[9]="October";
-	months[10]="November";
-	months[11]="December";
+		months[0]="January";
+		months[1]="February";
+		months[2]="March";
+		months[3]="April";
+		months[4]="May";
+		months[5]="June";
+		months[6]="July";
+		months[7]="August";
+		months[8]="September";
+		months[9]="October";
+		months[10]="November";
+		months[11]="December";
 
 	var day = document.getElementById("dob_day");
 	var month = document.getElementById("dob_month");
@@ -59,10 +59,57 @@ function buildForm(){
 		year.appendChild(opt);
 	}
 
+	var questions = new Array(3);
+		questions[0]="What is your mother's maiden name?";
+		questions[1]="What is your postal code?";
+		questions[2]="What is your favourite color?";
+
+	var sec_questions = document.getElementById("security_questions");
+	for (i=0; i < questions.length; i++){
+		var opt = document.createElement("option");
+		opt.value = questions[i];
+		opt.appendChild(document.createTextNode(questions[i]));
+
+		sec_questions.appendChild(opt);
+	}
 }
 
-function emptyCheck(username, first, last, email, email_conf, postal, terms, dob)
+function mobileToQuestion(){
+	var phone = document.getElementById("securityNumber");
+	var questions = document.getElementById("securityQuestion");
+
+	toggleVisibility(phone);
+	toggleVisibility(questions);
+}
+
+function switchAccountChoice(){
+	var u = document.getElementById("userChoice");
+	var a = document.getElementById("artistChoice");
+
+	toggleRegistrationForm(u);
+	toggleRegistrationForm(a);
+}
+
+function toggleRegistrationForm(element){
+	element.classList.toggle("selected");
+	element.classList.toggle("unselected");
+}
+
+function emptyCheck()
 {
+	var username = document.getElementById('reg_username');
+	var first_name = document.getElementById('reg_first_name');
+	var middle_name = document.getElementById('reg_middle_name');
+	var last_name = document.getElementById('reg_last_name');
+	var email = document.getElementById('reg_email');
+	var email_conf = document.getElementById('reg_email_confirm');
+	var country = document.getElementById('countries');
+	var postalCode = document.getElementById('reg_postal');
+	var phone = document.getElementById('reg_phone'); 
+	var gender = document.getElementById('greg_ender');
+	var dob = document.getElementById('datepicker');
+	var terms = document.getElementById('reg_terms');
+
 	//EMPTY FIELDS//
 	if (username.value.length == 0){
 		console.log(">>>Missing username");
@@ -98,8 +145,21 @@ function emptyCheck(username, first, last, email, email_conf, postal, terms, dob
 	return true;
 }
 
-function validateInfo(email, email_conf, phone, postal)
+function validateInfo()
 {
+	var username = document.getElementById('reg_username');
+	var first_name = document.getElementById('reg_first_name');
+	var middle_name = document.getElementById('reg_middle_name');
+	var last_name = document.getElementById('reg_last_name');
+	var email = document.getElementById('reg_email');
+	var email_conf = document.getElementById('reg_email_confirm');
+	var country = document.getElementById('countries');
+	var postalCode = document.getElementById('reg_postal');
+	var phone = document.getElementById('reg_phone'); 
+	var gender = document.getElementById('greg_ender');
+	var dob = document.getElementById('datepicker');
+	var terms = document.getElementById('reg_terms');
+
 	//TEXT VALIDATIONS//
 	var emailExpression = /^[\w\.]{1,}[@]{1}[\w]{1,}\.[\w]{1,}$/	
 	if(!emailExpression.test(email.value)){
@@ -137,22 +197,8 @@ function validateInfo(email, email_conf, phone, postal)
 } 
 
 function register()
-{
-	var username = document.getElementById('username');
-	var first_name = document.getElementById('first_name');
-	var middle_name = document.getElementById('middle_name');
-	var last_name = document.getElementById('last_name');
-	var email = document.getElementById('email');
-	var email_conf = document.getElementById('confirm_email');
-	var country = document.getElementById('countries');
-	var postalCode = document.getElementById('postal');
-	var phone = document.getElementById('phone'); 
-	var gender = document.getElementById('gender');
-	var dob = document.getElementById('datepicker');
-	var terms = document.getElementById('terms');
-	var news = document.getElementById('news');
-	
-	if (!emptyCheck(username, first_name, last_name, email, email_conf, postal, terms, dob))
+{	
+	if (!emptyCheck())
 	{
 		console.log(">>>Empty check(s) failed");
 		return false;
@@ -160,7 +206,7 @@ function register()
 	console.log(">Important fields are entered");
 
 
- 	if(!validateInfo(email, email_conf, phone, postalCode))
+ 	if(!validateInfo())
  	{
  		console.log(">>>Important fields are invalid");
  		return false;

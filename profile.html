@@ -1,67 +1,87 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>MajorScale Music - Profile</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/register.css" rel="stylesheet" />
-    <link href="css/profile.css" rel="stylesheet" />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/register.css' rel='stylesheet' />
+    <link href='css/profile.css' rel='stylesheet' />
 
-    <script src="js/msm.js"> </script>
-    <script src="js/musicPlayer.js"></script>
+    <script src='js/msm.js'> </script>
+    <script src='js/musicPlayer.js'></script>
     <script src='js/accountManagement.js'></script>
-    <script src="js/testing.js"></script>
+    <script src='js/testing.js'></script>
 
   </head>
 
-  <body onload="addMedia(); displayAccount();">
+  <body onload='addMedia(); displayAccount();'>
 
     <header>
-      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
-     
-      <div id="song_status"> STATUS </div>
-     
-      <div id="song_data" > <!-- onclick="copyToClipboard()" -->     
-            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-        <div id="song_title"> Title </div> 
+      <div id='logo'>
+        <a href='index.html'> <img id='img_logo'> </img> </a> 
+      </div>
+
+      <div id='music_information'> 
+          <span id='song_status'> STATUS </span>
+
+          <div id='song_data'> <!-- onclick='copyToClipboard()' --> 
+            <marquee  behavior='scroll' scrollamount='2'> <!-- onmouseover='this.stop();' onmouseout='this.start();'  -->
+              <span id='song_title' onmouseover='showMoreInfo();' onmouseout='hideMoreInfo();'> Title </span> 
             </marquee>
-       
-        <div id="song_artist"> Artist </div>
-        <div id="song_album"> Album (Year) </div>  
-        <div id="dialog-message" title="Download complete"></div>
+            <span id='song_artist' class='hide'> Artist </span> 
+            <span id='song_album' class='hide'> Album (Year) </span>  
+          </div>
+
+          <div id='player'>
+            <audio class='now_playing' onplay='go()' onpause='stop()' controls> 
+              <source id='now_playing'> Your browser does not support this audio format. </source>
+            </audio>
+          </div>
       </div>
-     
-      <div id="slogan"> 
-        <a href='index.html'>Back to homepage</a>
+
+      <div id='account'>
+        <span id='newUserAccount' class='show'> 
+          <button type='button' id='loginStart' onclick='loginClick()'>Login </button> 
+          <button type='button' id='register' onClick='registerClick()'>Register </button> 
+        </span>
+        <span id='loginAccount' class='hide'>
+              Username <input id='username_login' type='text' /> <br/>
+              Password <input id='password_login' type='password'/> <br/>
+
+              <button type='button' id='loginButton' onclick='login()'>Make some music!</button>
+              <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
+        </span>
+        <span id='account_message'></span>
       </div>
+
     </header>
 
-    <hr>
+    <hr/>
 
-    <div id="content">     
-	    <div id="account_info_crucial">
+    <div id='content'>     
+	    <div id='account_info_crucial'>
 	    	<span id='display_username' class='profile_info'> </span><br/>
-    	Name <span id='display_firstname' class='profile_info' contenteditable="true" ></span>
-   			<span id='display_lastname' class='profile_info' contenteditable="true"></span><br/>
-   		Email <span id='display_email' class='profile_info' contenteditable="true"></span><br/>
+    	Name <span id='display_firstname' class='profile_info' contenteditable='true' ></span>
+   			<span id='display_lastname' class='profile_info' contenteditable='true'></span><br/>
+   		Email <span id='display_email' class='profile_info' contenteditable='true'></span><br/>
     	Country <span id='display_country' class='profile_info' onclick='editInfo(this)'></span><br/>
-    	Postal Code <span id='display_postalcode' class='profile_info' contenteditable="true"></span><br/>
-    	Phone # <span id='display_phone' class='profile_info' contenteditable="true"></span><br/>
-    	Gender 	<span id='display_gender' class='profile_info' contenteditable="true"></span><br/>
-    	Birthday <span id='display_dob' class='profile_info' contenteditable="true"></span><br/>	
+    	Postal Code <span id='display_postalcode' class='profile_info' contenteditable='true'></span><br/>
+    	Phone # <span id='display_phone' class='profile_info' contenteditable='true'></span><br/>
+    	Gender 	<span id='display_gender' class='profile_info' contenteditable='true'></span><br/>
+    	Birthday <span id='display_dob' class='profile_info' contenteditable='true'></span><br/>	
     	<br/><br/><br/>
-				<input type="checkbox" name="news" id='news' value="news"/>
+				<input type='checkbox' name='news' id='news' value='news'/>
 				Subscribe to the weekly newsletter <br/><br/>
 		</div> <!-- account info crucial -->
 
-	    <div id="account_info_preferences">
+	    <div id='account_info_preferences'>
 	   		<h1> Musical taste </h1>
 		    <div id='display_genres'></div>
 		</div> <!-- account preferences -->
 
-	    <div id="account_info_media">
+	    <div id='account_info_media'>
 	    	<span id='twitter'> TWITTER <input type='text' value='NateLeGreat1'/>
-	    		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+	    		<a href='https://twitter.com/share' class='twitter-share-button'>Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</span><br/><br/>
 
@@ -71,12 +91,12 @@
     	
     </div> <!-- content -->
 
-     <hr>
+     <hr/>
 
     <footer>
-      <audio onplay="go()" onpause="stop()" controls>
-        <source id='test_audio'> Your browser does not support this audio format. </source>
-      </audio>    
+      About us </br>
+      Contact us</br>
+      MajorScale Music™ ©2013   
     </footer>
 
   </body>

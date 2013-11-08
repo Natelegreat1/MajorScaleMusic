@@ -214,6 +214,5 @@ function countriesDropdown(container){
 		out += "<option value='" + key + "'>" + countries[key] + "</option>";
 	}
 	out += "</select>";
-	console.log(out);
 	document.getElementById(container).innerHTML = out;
 }

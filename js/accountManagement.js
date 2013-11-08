@@ -73,4 +73,14 @@ function addPreferences(){
 			genreList.appendChild(document.createElement('br'));
 		}
 	}
+	
+	console.log('got em!');
+
+	var genreAreas = document.getElementsByClassName('genres');
+
+	console.log('got em!');
+
+	console.log(genres[4]);
+	genreAreas[1].appendChild(document.createTextNode(genres[4]));
+
 }

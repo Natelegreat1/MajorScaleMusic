@@ -1,57 +1,65 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>MajorScale Music - Song</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/song.css" rel="stylesheet" />
-    <link href="css/register.css" rel="stylesheet" />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/song.css' rel='stylesheet' />
+    <link href='css/register.css' rel='stylesheet' />
 
-    <script src="js/msm.js"> </script>
-    <script src="js/musicPlayer.js"></script>
-    <script src="js/testing.js"></script>
+    <script src='js/msm.js'> </script>
+    <script src='js/musicPlayer.js'></script>
+    <script src='js/testing.js'></script>
 
   </head>
 
   <body onload='addMedia();'>
 
     <header>
-      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
-      <div id="song_status"> STATUS </div>
-      <div id="song_data" > <!-- onclick="copyToClipboard()" -->
-            
-            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-        <div id="song_title"> Title </div> 
-            </marquee>
-       
-        <div id="song_artist"> Artist </div>     
-        <div id="song_album"> Album (Year) </div>  
-        <div id="dialog-message" title="Download complete"></div>
+      <div id='logo'>
+        <a href='index.html'> <img id='img_logo'> </img> </a> 
       </div>
 
-      <div id="account">
-        <div id='newUserAccount' class='show'> 
-          <button type="button" id='loginStart' onclick="loginClick()">Login</button> 
-          <button type="button" id='register' onClick='registerClick()'>Register</button> 
-        </div>
-        <div id='loginAccount' class='hide'>
+      <div id='music_information'> 
+          <span id='song_status'> STATUS </span>
+
+          <div id='song_data'> <!-- onclick='copyToClipboard()' --> 
+            <marquee  behavior='scroll' scrollamount='2'> <!-- onmouseover='this.stop();' onmouseout='this.start();'  -->
+              <span id='song_title' onmouseover='showMoreInfo();' onmouseout='hideMoreInfo();'> Title </span> 
+            </marquee>
+            <span id='song_artist' class='hide'> Artist </span> 
+            <span id='song_album' class='hide'> Album (Year) </span>  
+          </div>
+
+          <div id='player'>
+            <audio class='now_playing' onplay='go()' onpause='stop()' controls> 
+              <source id='now_playing'> Your browser does not support this audio format. </source>
+            </audio>
+          </div>
+      </div>
+
+      <div id='account'>
+        <span id='newUserAccount' class='show'> 
+          <button type='button' id='loginStart' onclick='loginClick()'>Login </button> 
+          <button type='button' id='register' onClick='registerClick()'>Register </button> 
+        </span>
+        <span id='loginAccount' class='hide'>
               Username <input id='username_login' type='text' /> <br/>
               Password <input id='password_login' type='password'/> <br/>
 
               <button type='button' id='loginButton' onclick='login()'>Make some music!</button>
               <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
-        </div>
-        <div id='account_message'>  
-          Join MajorScale Music today <br/><br/> <i>Get the most out of your music!</i>
-        </div>
+        </span>
+        <span id='account_message'></span>
       </div>
+
     </header>
 
-    <hr>
+    <hr/>
 
-  <div id="content">
+  <div id='content'>
      
-    <div id="now_playing">
+    <div id='now_playing'>
     	<video controls>
         <source id='test_video'> Your browser does not support this audio format. </source>
       </video>
@@ -101,7 +109,7 @@
       What we're handlin', you can call us Aaron Burr
       From the way we're droppin' Hamilton's
       Now parked in our seats, movie trivia's da illest
-      Whose "Friends" alum starred in films with Bruce Willis?
+      Whose 'Friends' alum starred in films with Bruce Willis?
 
       We answered so fast, it was scary
       Everyone stared in awe when we screamed, Matthew Perry
@@ -116,12 +124,12 @@
 		
   </div> <!-- content -->
 
-    <hr>
+    <hr/>
 
     <footer>
-      <audio onplay="go()" onpause="stop()" controls>
-        <source id='test_audio'> Your browser does not support this audio format. </source>
-      </audio> 
+       About us </br>
+      Contact us</br>
+      MajorScale Music™ ©2013 
     </footer>
   </body>
 </html>

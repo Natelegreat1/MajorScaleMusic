@@ -1,109 +1,128 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>MajorScale Music</title>
 
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/homepage.css" rel="stylesheet" />
-    <link href="css/search.css" rel="stylesheet" />
-    <link  href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/homepage.css' rel='stylesheet' />
+    <link href='css/search.css' rel='stylesheet' />
 
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="js/msm.js"> </script>
-    <script src="js/musicPlayer.js"></script>
-    <script src="js/testing.js"></script>
-
+    <script src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <script src='http://code.jquery.com/ui/1.10.3/jquery-ui.js'></script>
+    <script src='js/msm.js'> </script>
+    <script src='js/musicPlayer.js'></script>
+    <script src='js/testing.js'></script>
   </head>
 
-  <body onload="pageLoaded(); addMedia();">
+  <body onload='homepageLoaded(); addMedia();'>
 
     <header>
-      <a id="logo" href='index.html'> <img id="img_logo"/> </a> 
-
-      <div id="song_status"> STATUS </div>
-      <div id="song_data" > <!-- onclick="copyToClipboard()" --> 
-            <marquee class='marquee' behavior="scroll" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-        <div id="song_title"> Title </div> 
-            </marquee>
-        <div id="song_artist"> Artist </div> 
-        <div id="song_album"> Album (Year) </div>  
-        <div id="dialog-message" title="Download complete"></div>
+      <div id='logo'>
+        <a href='index.html'> <img id='img_logo'> </img> </a> 
       </div>
 
-      <div id="account">
-        <div id='newUserAccount' class='show'> 
-          <button type="button" id='loginStart' onclick="loginClick()">Login</button> 
-          <button type="button" id='register' onClick='registerClick()'>Register</button> 
-        </div>
-        <div id='loginAccount' class='hide'>
+      <div id='music_information'> 
+          <span id='song_status'> STATUS </span>
+
+          <div id='song_data'> <!-- onclick='copyToClipboard()' --> 
+            <marquee behavior='scroll' scrollamount='4' > 
+ <!-- onmouseover='this.stop();' onmouseout='this.start();'  -->
+              <span id='song_title'> Title </span> 
+              <span id='song_artist' > Artist </span> -
+              <span id='song_album' > Album [Year] </span>  
+            </marquee>
+          </div>
+
+          <div id='player'>
+            <audio class='now_playing' onplay='go()' onpause='stop()' controls> 
+              <source id='now_playing'> Your browser does not support this audio format. </source>
+            </audio>
+          </div>
+      </div>
+
+      <div id='account'>
+        <span id='newUserAccount' class='show'> 
+          <button type='button' id='loginStart' onclick='loginClick()'>Login </button> 
+          <button type='button' id='register' onClick='registerClick()'>Register </button> 
+        </span>
+        <span id='loginAccount' class='hide'>
               Username <input id='username_login' type='text' /> <br/>
               Password <input id='password_login' type='password'/> <br/>
 
               <button type='button' id='loginButton' onclick='login()'>Make some music!</button>
               <button type='button' id='cancelButton' onclick='loginCancelClick()'>Cancel</button>
-        </div>
-        <div id='account_message'></div>
-      </div>
-
-      <div id='searchSection'>
-        <form id="search" method="get" id="searchbox_018244718482588789495:p7exxt6ah5w" action="www.majorscalemusic.ca">
-          <input value="018244718482588789495:p7exxt6ah5w" name="cx" type="hidden"/> 
-          <input value="FORID:11" name="cof" type="hidden"/> 
-          <input id="q" name="q" type="text" placeholder="Search..." /> 
-        </form>
+        </span>
+        <span id='account_message'></span>
       </div>
     </header>
 
-    <hr>
-    <div id="content">
+    <div id='content'>
 
-      <div id="featured" class="scrollable">
-        <table id='featured'>
-            <tr> <th></th> <th></th>
-                 <th> FEATURED SONGS        
-                      <div id="current_week"> week goes here</div>
-                  </th> 
-                  <th></th><th></th> </tr>
-            <tr> <td onclick='playSong(this)'> 1 </td> <td onclick='playSong(this)'> 2 </td> <td onclick='playSong(this)'> 3 </td> <td onclick='playSong(this)'> 4 </td><td onclick='playSong(this)'> 5 </td></tr>
-         </table>
-
-        <hr>
-      </div>
-      
-      <div id="squares">
+      <div id='featured_songs'>
+        <span id='current_week'> week goes here  </span>
         
-        <div id="TL" class="square"> 
-          <table>
-            <tr class="genres"> <th></th> <th> Classical </th> <th></th> </tr>
+        <div id='feats'>  
+          <video id='feat_video1' class='featured'></video> 
+          <video id='feat_video2' class='featured'></video>
+          <video id='feat_video3' class='featured'></video>
+          <video id='feat_video4' class='featured'></video>
+          <video id='feat_video5' class='featured'></video>
+        </div>
+
+        <hr/>
+      </div>
+
+      <div id='squares'>
+      
+        <div class='square'> 
+          <div class='genres'> </div>
+          <table >
             <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
             <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
             <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
           </table>
         </div>
 
-        <div id="TR" class="square"> 
+        <div class='square'> 
+          <div class='genres'> </div>
           <table>
-            <tr class="genres"> <th></th> <th> Hip-Pop </th> <th></th></tr>
             <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
             <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
             <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
           </table>
         </div>
 
-        <div id="BL" class="square"> 
-          <table>
-            <tr class="genres"> <th></th> <th> Rap </th> <th></th></tr>
+        <div class='square'> 
+         <div class='genres'> </div>
+         <table>
             <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
             <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
             <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
           </table>
         </div>
 
-        <div id="BR" class="square"> 
-            <table>
-            <tr class="genres"> <th></th> <th> Jazz </th> <th></th></tr>
+        <div class='square'> 
+          <div class='genres'> </div>
+          <table>
+            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+        </div>
+       
+        <div class='square'> 
+          <div class='genres'> </div>
+          <table>
+            <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
+            <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
+            <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
+          </table>
+        </div>
+
+        <div class='square'> 
+           <div class='genres'> </div>
+           <table>
               <tr> <td> 1 </td> <td> 2 </td> <td> 3 </td> </tr>
               <tr> <td> 4 </td> <td> 5 </td> <td> 6 </td> </tr>
               <tr> <td> 7 </td> <td> 8 </td> <td> 9 </td> </tr>
@@ -114,12 +133,12 @@
 
     </div> <!-- content -->
 
-     <hr>
+    <hr/>
 
     <footer>
-      <audio onplay="go()" onpause="stop()" controls> 
-        <source id='test_audio'> Your browser does not support this audio format. </source>
-      </audio>
+      About us </br>
+      Contact us</br>
+      MajorScale Music™ ©2013
     </footer>
 
   </body>
