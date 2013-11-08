@@ -32,33 +32,32 @@ function displayAccount(){
 function addPreferences(){
 	var i;
 	var genres = new Array("Blues","Classic Rock","Country","Dance","Disco","Funk","Grunge",
- "Hip-Hop","Jazz","Metal","New Age","Oldies","Other","Pop","R&B",
- "Rap","Reggae","Rock","Techno","Industrial","Alternative","Ska",
- "Death Metal","Soundtrack","Euro-Techno","Ambient",
- "Trip-Hop","Vocal","Jazz+Funk","Fusion","Trance","Classical",
- "Instrumental","Acid","House","Game","Sound Clip","Gospel",
- "Noise","AlternRock","Bass","Soul","Punk","Space","Meditative",
- "Instrumental Pop","Instrumental Rock","Ethnic","Gothic",
- "Darkwave","Techno-Industrial","Electronic","Pop-Folk",
- "Eurodance","Dream","Southern Rock","Comedy","Cult","Gangsta",
- "Top 40","Christian Rap","Pop/Funk","Jungle","Native American",
- "Cabaret","New Wave","Psychadelic","Rave","Showtunes","Trailer",
- "Lo-Fi","Tribal","Acid Punk","Acid Jazz","Polka","Retro",
- "Musical","Rock & Roll","Hard Rock","Folk","Folk-Rock",
- "National Folk","Swing","Fast Fusion","Latin","Revival",
- "Celtic","Bluegrass","Avantgarde","Gothic Rock","Progressive Rock",
- "Psychedelic Rock","Symphonic Rock","Slow Rock","Big Band",
- "Chorus","Easy Listening","Acoustic","Humour","Chanson",
- "Opera","Chamber Music","Sonata","Symphony","Booty Bass","Primus", "Satire","Slow Jam","Club","Tango","Samba",
- "Folklore","Ballad","Power Ballad","Rhythmic Soul","Freestyle",
- "Duet","Punk Rock","Drum Solo","Acapella","Euro-House","Dance Hall");
+	 "Hip-Hop","Jazz","Metal","New Age","Oldies","Other","Pop","R&B",
+	 "Rap","Reggae","Rock","Techno","Industrial","Alternative","Ska",
+	 "Death Metal","Soundtrack","Euro-Techno","Ambient",
+	 "Trip-Hop","Vocal","Jazz+Funk","Fusion","Trance","Classical",
+	 "Instrumental","Acid","House","Game","Sound Clip","Gospel",
+	 "Noise","AlternRock","Bass","Soul","Punk","Space","Meditative",
+	 "Instrumental Pop","Instrumental Rock","Ethnic","Gothic",
+	 "Darkwave","Techno-Industrial","Electronic","Pop-Folk",
+	 "Eurodance","Dream","Southern Rock","Comedy","Cult","Gangsta",
+	 "Top 40","Christian Rap","Pop/Funk","Jungle","Native American",
+	 "Cabaret","New Wave","Psychadelic","Rave","Showtunes","Trailer",
+	 "Lo-Fi","Tribal","Acid Punk","Acid Jazz","Polka","Retro",
+	 "Musical","Rock & Roll","Hard Rock","Folk","Folk-Rock",
+	 "National Folk","Swing","Fast Fusion","Latin","Revival",
+	 "Celtic","Bluegrass","Avantgarde","Gothic Rock","Progressive Rock",
+	 "Psychedelic Rock","Symphonic Rock","Slow Rock","Big Band",
+	 "Chorus","Easy Listening","Acoustic","Humour","Chanson",
+	 "Opera","Chamber Music","Sonata","Symphony","Booty Bass","Primus", "Satire","Slow Jam","Club","Tango","Samba",
+	 "Folklore","Ballad","Power Ballad","Rhythmic Soul","Freestyle",
+	 "Duet","Punk Rock","Drum Solo","Acapella","Euro-House","Dance Hall");
 
 	genres.sort();
 
 	var genreList = document.getElementById('display_genres');
 	
 	for (i=0; i<genres.length; i++){
-
 		var checkbox = document.createElement('input');
 		checkbox.value = genres[i];
 		checkbox.className = 'profile_info';
@@ -72,10 +71,18 @@ function addPreferences(){
 		}else{
 			genreList.appendChild(document.createElement('br'));
 		}
+	}	
+}
+
+function updateGenrePreferences(){
+	for(g in genreList){
+		if (genreList[g]){
+			console.log('check');
+		}
 	}
 	
 	var genreAreas = document.getElementsByClassName('genres');
 	for (i=0; i<genreAreas.length; i++){
-		genreAreas[i].appendChild(document.createTextNode(genres[4]));
+		genreAreas[i].appendChild(document.createTextNode(genres[i]));
 	}
 }
