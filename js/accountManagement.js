@@ -74,13 +74,8 @@ function addPreferences(){
 		}
 	}
 	
-	console.log('got em!');
-
 	var genreAreas = document.getElementsByClassName('genres');
-
-	console.log('got em!');
-
-	console.log(genres[4]);
-	genreAreas[1].appendChild(document.createTextNode(genres[4]));
-
+	for (i=0; i<genreAreas.length; i++){
+		genreAreas[i].appendChild(document.createTextNode(genres[4]));
+	}
 }
