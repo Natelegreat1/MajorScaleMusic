@@ -113,6 +113,7 @@ function emptyCheck()
 	//EMPTY FIELDS//
 	if (username.value.length == 0){
 		console.log(">>>Missing username");
+		document.getElementById('username').style.border = '5px double red';
 		username.focus();
 		return false;
 	}

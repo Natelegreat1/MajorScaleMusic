@@ -2,7 +2,7 @@ table {
 	height: 100%;
 	width: 100%;
 	table-layout: fixed; 
-		box-shadow: 1px 1px 75px white;
+	box-shadow: 1px 1px 75px white;
 
 }
 
@@ -46,6 +46,8 @@ td:active {
 	font-weight:lighter;
 	font-size: medium;
 
+	border-bottom: double white 5px;
+
 	margin-bottom: 3%;
 	text-align: center;
 
@@ -74,11 +76,8 @@ td:active {
 }
 
 .featured:hover{
-	transition:width 2s, height 2s, transform 4s;
-	-webkit-transition:width 2s, height 2s, -webkit-transform 4s;
-	
-	transform:scale(1.5,1.5);
-	-webkit-transform:scale(1.5,1.5);
+	box-shadow: 1px 1px 50px white;
+
 }
 
 .genres{

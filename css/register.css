@@ -42,16 +42,30 @@
 	float: left;
 }
 
+
 .selected{
-	border: inset black 5px;
-    background: grey;
-    color: white;
+	font-weight: bold;
+	font-size: x-large;
+	border: outset grey 5px;
+
+	background: -webkit-linear-gradient(#0099FF, lightgrey);
+  	background: -moz-linear-gradient(#0099FF, lightgrey);
+  	background: -ms-linear-gradient(#0099FF, lightgrey);
+  	background: linear-gradient(#0099FF, lightgrey);
+
+  	color: black;
 }
 
 .unselected{
-	border: outset black 5px;
-	background: white;
-	color: black;
+	font-weight: lighter;
+
+	font-size: large;
+	border: outset grey 5px;
+	background: -webkit-linear-gradient(white, grey);
+  	background: -moz-linear-gradient(white, grey);
+  	background: -ms-linear-gradient(white, grey);
+  	background: linear-gradient(white, grey);	
+  	color: black;
 }
 
 #data{

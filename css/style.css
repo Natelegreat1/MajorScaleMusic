@@ -14,7 +14,7 @@ header {
 	height: 15%;
 	width: 100%;
 	position: fixed;
-	border-bottom: inset white 1px;
+	border-bottom: double white 5px;
 	overflow: hidden;
 	background: black;
 	color: white;
@@ -28,6 +28,8 @@ header {
 }
 
 footer {
+	border-top: double white 5px;
+
 	height: 5%;
 	width: 100%;
 
@@ -59,21 +61,24 @@ footer {
 	width: 25%;
 	height: 100%;
  	float: left;
- 	margin-top: 0.5%;
- 	margin-left: 1%;
-
+ 	margin-left: 2%;
 }
 
 #logo:hover {
-	transition:width 2s, height 2s, transform 4s;
+/*	transition:width 2s, height 2s, transform 4s;
 	-webkit-transition:width 2s, height 2s, -webkit-transform 4s;
 	
 	transform:scale(1.1,1.1);
-	-webkit-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);*/
 }
 
 #img_logo {
 	content:url("../media/logo.png");
+	width: 60%;
+}
+
+#img_logo:hover {
+	content:url("../media/logo_full.png");
 	width: 60%;
 }
 
